@@ -48,7 +48,7 @@ test-frontend: dependencies-frontend
 	$(YARN) test
 
 lint-frontend: dependencies-frontend
-	$(YARN) lint
+	YARN_PRODUCTION=false $(YARN) lint
 
 build-frontend: dependencies-frontend
 	REACT_APP_SERVER_URL=$(SERVER_URL) $(YARN) build
