@@ -14,7 +14,7 @@ pipeline:
   # build on pull requests
 
   build:
-    image: golang:1.8-alpine3.6
+    image: golang:1.9-alpine3.7
     environment:
       - REACT_APP_SERVER_URL="//code-annotation.sourced.tech"
     commands:
@@ -31,7 +31,7 @@ pipeline:
   # deployment to staging environment
 
   build_stg:
-    image: golang:1.8-alpine3.6
+    image: golang:1.9-alpine3.7
     environment:
       - REACT_APP_SERVER_URL="//code-annotation-staging.srcd.run"
     commands:
