@@ -7,6 +7,8 @@ HOST ?= 127.0.0.1
 PORT ?= 8080
 SERVER_URL ?= //$(HOST):$(PORT)
 
+YARN_PRODUCTION ?= true
+
 # Tools
 YARN = yarn
 GODEP = dep
@@ -40,7 +42,7 @@ export $(shell sed 's/=.*//' $(ENV))
 # Frontend
 
 dependencies-frontend:
-	$(YARN)	install
+	$(YARN) install --production=$(YARN_PRODUCTION)
 
 test-frontend: dependencies-frontend
 	$(YARN) test
